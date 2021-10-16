@@ -1,5 +1,6 @@
-import { User } from "../../entities/User";
-import { IUsersRepository } from "../IUsersRepository";
+
+import { User } from "@Entities/User";
+import { IUsersRepository } from "@Repositories/IUsersRepository";
 
 export class InMemoryUsersRepository implements IUsersRepository {
   private users: User[] = [
@@ -8,7 +9,7 @@ export class InMemoryUsersRepository implements IUsersRepository {
     new User({ firstname: 'Fulano', surname: 'de Tal', email: 'fulanodetal@gmail.com', password: '123456' }),
   ];
 
-  async getById(userId: string): Promise<User> {
+  async getById(userId: string): Promise<User | undefined> {
     return this.users.find(fUser => fUser.id === userId);
   }
 
