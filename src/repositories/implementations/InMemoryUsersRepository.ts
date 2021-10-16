@@ -1,16 +1,30 @@
-
-import { User } from "@Entities/User";
-import { IUsersRepository } from "@Repositories/IUsersRepository";
+import { User } from '@Entities/User';
+import { IUsersRepository } from '@Repositories/IUsersRepository';
 
 export class InMemoryUsersRepository implements IUsersRepository {
   private users: User[] = [
-    new User({ firstname: 'Davilson', surname: 'Castro', email: 'davilsondecastro@gmail.com', password: '123456' }),
-    new User({ firstname: 'John', surname: 'Doe', email: 'johndoe@gmail.com', password: '123456' }),
-    new User({ firstname: 'Fulano', surname: 'de Tal', email: 'fulanodetal@gmail.com', password: '123456' }),
+    new User({
+      firstname: 'Davilson',
+      surname: 'Castro',
+      email: 'davilsondecastro@gmail.com',
+      password: '123456',
+    }),
+    new User({
+      firstname: 'John',
+      surname: 'Doe',
+      email: 'johndoe@gmail.com',
+      password: '123456',
+    }),
+    new User({
+      firstname: 'Fulano',
+      surname: 'de Tal',
+      email: 'fulanodetal@gmail.com',
+      password: '123456',
+    }),
   ];
 
   async getById(userId: string): Promise<User | undefined> {
-    return this.users.find(fUser => fUser.id === userId);
+    return this.users.find((fUser) => fUser.id === userId);
   }
 
   async fetch(): Promise<User[]> {
@@ -20,7 +34,9 @@ export class InMemoryUsersRepository implements IUsersRepository {
   async save(user: User): Promise<User> {
     const userAlreadyExists = await this.getById(user.id);
     if (userAlreadyExists) {
-      this.users = this.users.map(fUser => (fUser.id === user.id) ? user : fUser);
+      this.users = this.users.map((fUser) =>
+        fUser.id === user.id ? user : fUser,
+      );
     } else {
       this.users.push(user);
     }
@@ -28,6 +44,6 @@ export class InMemoryUsersRepository implements IUsersRepository {
   }
 
   async delete(userId: string): Promise<void> {
-    this.users = this.users.filter(fUser => fUser.id !== userId);
+    this.users = this.users.filter((fUser) => fUser.id !== userId);
   }
 }

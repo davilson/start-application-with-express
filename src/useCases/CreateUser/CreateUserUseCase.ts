@@ -1,6 +1,7 @@
-import { User } from "@Entities/User";
-import { IUsersRepository } from "@Repositories/IUsersRepository";
-import { ICreateUserRequestDTO } from "./CreateUserDTO";
+import { User } from '@Entities/User';
+import { IUsersRepository } from '@Repositories/IUsersRepository';
+
+import { ICreateUserRequestDTO } from './CreateUserDTO';
 
 export class CreateUserUseCase {
   constructor(private userRepository: IUsersRepository) {}

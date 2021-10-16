@@ -1,5 +1,5 @@
-import { User } from "@Entities/User";
-import { IUsersRepository } from "@Repositories/IUsersRepository";
+import { User } from '@Entities/User';
+import { IUsersRepository } from '@Repositories/IUsersRepository';
 
 export class FetchUserUseCase {
   constructor(private userRepository: IUsersRepository) {}

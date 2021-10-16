@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
-import { FetchUserUseCase } from "./FetchUserUseCase";
+
+import { FetchUserUseCase } from './FetchUserUseCase';
 
 export class FetchUserController {
   constructor(private fetchUserUseCase: FetchUserUseCase) {}
@@ -9,7 +10,7 @@ export class FetchUserController {
       const users = await this.fetchUserUseCase.execute();
       return response.status(200).json(users);
     } catch (error) {
-      return response.status(400).json({ message: 'Unexpected error.'})
+      return response.status(400).json({ message: 'Unexpected error.' });
     }
   }
 }

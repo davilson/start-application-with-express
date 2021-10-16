@@ -1,6 +1,7 @@
-import { InMemoryUsersRepository } from "@Repositories/implementations/InMemoryUsersRepository";
-import { FetchUserController } from "./FetchUserController";
-import { FetchUserUseCase } from "./FetchUserUseCase";
+import { InMemoryUsersRepository } from '@Repositories/implementations/InMemoryUsersRepository';
+
+import { FetchUserController } from './FetchUserController';
+import { FetchUserUseCase } from './FetchUserUseCase';
 
 const inMemoryUsersRepository = new InMemoryUsersRepository();
 

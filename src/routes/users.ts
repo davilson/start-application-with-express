@@ -1,6 +1,6 @@
-import { Router } from 'express';
 import { createUserController } from '@UseCases/CreateUser';
 import { fetchUserController } from '@UseCases/FetchUser';
+import { Router } from 'express';
 
 const usersRouter = Router();
 

@@ -1,6 +1,7 @@
 import { Request, Response } from 'express';
-import { ICreateUserRequestDTO } from "./CreateUserDTO";
-import { CreateUserUseCase } from "./CreateUserUseCase";
+
+import { ICreateUserRequestDTO } from './CreateUserDTO';
+import { CreateUserUseCase } from './CreateUserUseCase';
 
 export class CreateUserController {
   constructor(private createUserUseCase: CreateUserUseCase) {}
@@ -12,7 +13,7 @@ export class CreateUserController {
       const user = await this.createUserUseCase.execute(data);
       return response.status(201).json(user);
     } catch (error) {
-      return response.status(400).json({ message: 'Unexpected error.'})
+      return response.status(400).json({ message: 'Unexpected error.' });
     }
   }
 }
