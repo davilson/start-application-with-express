@@ -1,5 +1,3 @@
-const path = require('path');
-
 const config = require('./tsconfig.paths.json');
 
 module.exports = {
@@ -55,7 +53,7 @@ module.exports = {
             '/*',
             '',
           );
-          return [pathKey, path.resolve(__dirname, pathValue)];
+          return [pathKey, pathValue];
         }),
       },
     },
