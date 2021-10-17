@@ -1,5 +1,5 @@
 const serverConfig = {
-  port: 3333,
+  port: process.env.SERVER_PORT || 3333,
 };
 
 export { serverConfig };
