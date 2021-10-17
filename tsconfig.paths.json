@@ -5,7 +5,8 @@
       "@Entities/*": ["./src/entities/*"],
       "@Repositories/*": ["./src/repositories/*"],
       "@UseCases/*": ["./src/useCases/*"],
-      "@Configs/*": ["./src/configs/*"]
+      "@Configs/*": ["./src/configs/*"],
+      "@Test/*": ["./test/*"]
     }
   }
 }
