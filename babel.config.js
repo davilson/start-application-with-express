@@ -1,10 +1,13 @@
-const config = require('./tsconfig.paths.json');
+const configPaths = require('./tsconfig.paths.json');
 
 const alias = {};
 
-Object.keys(config.compilerOptions.paths).forEach((itemKey) => {
+Object.keys(configPaths.compilerOptions.paths).forEach((itemKey) => {
   const pathKey = itemKey.replace('/*', '');
-  const pathValue = config.compilerOptions.paths[itemKey][0].replace('/*', '');
+  const pathValue = configPaths.compilerOptions.paths[itemKey][0].replace(
+    '/*',
+    '',
+  );
   alias[pathKey] = pathValue;
 });
 
@@ -21,5 +24,5 @@ module.exports = {
     '@babel/preset-typescript',
   ],
   plugins: [['module-resolver', { alias }]],
-  ignore: ['**/*.spec.ts'],
+  ignore: ['**/*.test.ts'],
 };

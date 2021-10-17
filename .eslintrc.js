@@ -1,4 +1,4 @@
-const config = require('./tsconfig.paths.json');
+const configPaths = require('./tsconfig.paths.json');
 
 module.exports = {
   env: {
@@ -47,12 +47,11 @@ module.exports = {
     'import/resolver': {
       alias: {
         extensions: ['.js', '.ts'],
-        map: Object.keys(config.compilerOptions.paths).map((itemKey) => {
+        map: Object.keys(configPaths.compilerOptions.paths).map((itemKey) => {
           const pathKey = itemKey.replace('/*', '');
-          const pathValue = config.compilerOptions.paths[itemKey][0].replace(
-            '/*',
-            '',
-          );
+          const pathValue = configPaths.compilerOptions.paths[
+            itemKey
+          ][0].replace('/*', '');
           return [pathKey, pathValue];
         }),
       },
