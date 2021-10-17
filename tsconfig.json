@@ -22,14 +22,14 @@
     "allowSyntheticDefaultImports": true,
     "rootDirs": [
       "./src",
-      "./test"
+      "__test__"
     ],
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true
   },
   "include": [
     "./src/**/*.ts",
-    "./test/**/*.ts"
+    "__test__/**/*.ts"
   ],
   "exclude": [
     "./node_modules/*",

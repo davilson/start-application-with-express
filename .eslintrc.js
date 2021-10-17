@@ -20,6 +20,7 @@ module.exports = {
   },
   rules: {
     'prettier/prettier': 'error',
+    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
     'import/prefer-default-export': 'off',
     'no-useless-constructor': 'off',
     '@typescript-eslint/no-var-requires': 'off',

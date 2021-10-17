@@ -7,8 +7,8 @@ const rootDir = path.resolve(__dirname, '..');
 const e2eConfig = {
   rootDir,
   displayName: 'e2e-tests',
-  setupFilesAfterEnv: ['<rootDir>/test/jest-setup.ts'],
-  testMatch: ['<rootDir>/test/**/*.test.ts'],
+  setupFilesAfterEnv: ['<rootDir>/__test__/jest-setup.ts'],
+  testMatch: ['<rootDir>/__test__/**/*.test.ts'],
 };
 
 module.exports = {
