@@ -17,7 +17,10 @@
     "test": "yarn test:functional"
   },
   "dependencies": {
+    "dayjs": "^1.10.7",
     "express": "^4.17.1",
+    "pino": "^7.0.2",
+    "pino-pretty": "^7.1.0",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
