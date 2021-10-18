@@ -2,29 +2,14 @@ import { User } from '@Entities/User';
 import { IUsersRepository } from '@Repositories/IUsersRepository';
 
 export class InMemoryUsersRepository implements IUsersRepository {
-  private users: User[] = [
-    new User({
-      firstname: 'Davilson',
-      surname: 'Castro',
-      email: 'davilsondecastro@gmail.com',
-      password: '123456',
-    }),
-    new User({
-      firstname: 'John',
-      surname: 'Doe',
-      email: 'johndoe@gmail.com',
-      password: '123456',
-    }),
-    new User({
-      firstname: 'Fulano',
-      surname: 'de Tal',
-      email: 'fulanodetal@gmail.com',
-      password: '123456',
-    }),
-  ];
+  private users: User[] = [];
 
   async getById(userId: string): Promise<User | undefined> {
     return this.users.find((fUser) => fUser.id === userId);
+  }
+
+  async getByEmail(userEmail: string): Promise<User | undefined> {
+    return this.users.find((fUser) => fUser.email === userEmail);
   }
 
   async fetch(): Promise<User[]> {
